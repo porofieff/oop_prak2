@@ -9,6 +9,7 @@ CONFIG += c++17 cmdline
 SOURCES += \
         application.cpp \
         array.cpp \
+        complex.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -19,4 +20,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     application.h \
     array.h \
+    complex.h \
     number.h

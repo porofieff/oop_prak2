@@ -61,7 +61,7 @@ number Array::calculate_arefmetic_avarage()
     number avg = 0;
     for (int i = 0; i < size; i++)
     {
-        avg += arr[i];
+        avg = avg + arr[i];
     }
     return avg/size;
 }
@@ -72,7 +72,7 @@ number Array::calculate_square()
     number sum_dif = 0;
     for (int i = 0; i < size; i++)
     {
-        sum_dif += (avg-arr[i])*(avg-arr[i]);
+        sum_dif = sum_dif + (avg-arr[i])*(avg-arr[i]);
     }
     number average_square = sqrt(sum_dif/(size-1));
     return average_square;
