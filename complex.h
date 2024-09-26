@@ -10,20 +10,21 @@ class complex
     double re, im;
 public:
     complex();
-    complex(const int&);
+    complex(double, double);
 
     complex operator*(complex);
     complex operator+(complex);
     complex operator-(complex);
     complex operator/(int);
 
-    //friend cmath& operator sqrt(complex&);
    // complex operator-(complex);
-    complex operator<(complex);
-    complex operator>(complex);
+    bool operator<(complex);
+    bool operator>(complex);
 
     friend ostream& operator<<(ostream&, complex);
     friend istream& operator>>(istream&, complex&);
+
+    complex sqrt_c();
 };
 
 #endif // COMPLEX_H

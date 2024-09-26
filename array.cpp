@@ -63,7 +63,7 @@ void Array::change_size(int new_size)
 
 number Array::calculate_arefmetic_avarage()
 {
-    number avg = 0;
+    number avg;
     for (int i = 0; i < size; i++)
     {
         avg = avg + arr[i];
@@ -74,12 +74,12 @@ number Array::calculate_arefmetic_avarage()
 number Array::calculate_square()
 {
     number avg = calculate_arefmetic_avarage();
-    number sum_dif = 0;
+    number sum_dif;
     for (int i = 0; i < size; i++)
     {
         sum_dif = sum_dif + (avg-arr[i])*(avg-arr[i]);
     }
-    number average_square = sqrt(sum_dif/(size-1));
+    number average_square = (sum_dif/(size-1)).sqrt_c();
     return average_square;
 }
 

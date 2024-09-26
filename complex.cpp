@@ -2,10 +2,10 @@
 #include <cmath>
 
 complex::complex() {}
-complex::complex(const int& r)
+complex::complex(double r, double i)
 {
     re = r;
-    im = 0;
+    im = i;
 }
 ostream& operator<<(ostream& os, complex c)
 {
@@ -24,21 +24,21 @@ complex complex::operator*(complex c)
     t.im = re * c.im + im * c.re;
     return t;
 };
-complex complex:: operator+(complex c)
+complex complex::operator+(complex c)
 {
     complex t;
     t.re = re + c.re;
     t.im = im + c.im;
     return t;
 };
-complex complex:: operator-(complex c)
+complex complex::operator-(complex c)
 {
     complex t;
     t.re = re - c.re;
     t.im = im - c.im;
     return t;
 };
-complex complex:: operator/(int c)
+complex complex::operator/(int c)
 {
     complex t;
     t.re = re / c;
@@ -52,7 +52,7 @@ complex complex:: operator/(int c)
     t.im = -im;
     return t;
 };*/
-complex complex:: operator<(complex c)
+bool complex::operator<(complex c)
 {
     bool res = false;
     int m1;
@@ -62,7 +62,7 @@ complex complex:: operator<(complex c)
     if (m1 < m2) res = true;
     return res;
 };
-complex complex:: operator>(complex c)
+bool complex::operator>(complex c)
 {
     bool res = false;
     int m1;
@@ -72,4 +72,16 @@ complex complex:: operator>(complex c)
     if (m1 > m2) res = true;
     return res;
 };
-///cmath &complex::operator sqrt(complex c){};
+
+complex complex::sqrt_c()
+{
+    complex t;
+    t.re = sqrt((sqrt(re*re + im*im) + re) / 2);
+    t.im = sqrt((sqrt(re*re + im*im) - re) / 2);
+
+    if(im < 0){
+        t.im = t.im * -1;
+    }
+
+    return t;
+};

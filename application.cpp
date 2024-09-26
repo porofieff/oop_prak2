@@ -22,6 +22,7 @@ int Application::exec()
             case 0:
                 return 0;
             case 1:
+            {
                 if (arr.sizeo() == 0)
                 {
                     cout << "Array is empty" << endl;
@@ -33,11 +34,15 @@ int Application::exec()
                     cin >> arr;
                     break;
                 }
+            }
             case 2:
+            {
                 cout << "Arifmetic avarage - " << arr.calculate_arefmetic_avarage() << endl;
                 cout << "Standatd deviation - " << arr.calculate_square() << endl;
                 break;
+            }
             case 3:
+            {
                 cout << "1 - Ascending" << endl;
                 cout << "2 - Descending" << endl;
                 int reverse;
@@ -47,13 +52,17 @@ int Application::exec()
                 else
                     arr.qsort(true);
                 break;
+            }
             case 4:
+            {
                 cout << "Input new size" << endl << "> ";
                 int num;
                 cin >> num;
                 arr.change_size(num);
                 break;
+            }
             case 5:
+            {
                 cout << "Input index" << endl << "> ";
                 int index;
                 number elem;
@@ -62,9 +71,12 @@ int Application::exec()
                 cin >> elem;
                 arr.change_element(index, elem);
                 break;
+            }
             case 6:
+            {
                 cout << arr;
                 break;
+            }
             default:
                 break;
         }
