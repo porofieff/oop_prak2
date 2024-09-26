@@ -1,13 +1,18 @@
 #include "array.h"
 #include <math.h>
 
+// ToDO
+//не работает сравнение чисел
+//нужео сделать корень числа
+//почемуто возникает ошибка и программа не отрабатывает 5 и 6 кейсы
+
 Array::Array()
 {
     arr = nullptr;
     size = 0;
 }
 
-Array::sizeo()
+int Array::sizeo()
 {
     return size;
 }

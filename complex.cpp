@@ -72,6 +72,4 @@ complex complex:: operator>(complex c)
     if (m1 > m2) res = true;
     return res;
 };
-cmath &complex::operator sqrt(complex c){
-
-};
+///cmath &complex::operator sqrt(complex c){};

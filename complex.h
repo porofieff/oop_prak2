@@ -11,14 +11,17 @@ class complex
 public:
     complex();
     complex(const int&);
+
     complex operator*(complex);
     complex operator+(complex);
     complex operator-(complex);
     complex operator/(int);
-    friend cmath& operator sqrt(complex&);
+
+    //friend cmath& operator sqrt(complex&);
    // complex operator-(complex);
     complex operator<(complex);
     complex operator>(complex);
+
     friend ostream& operator<<(ostream&, complex);
     friend istream& operator>>(istream&, complex&);
 };
