@@ -11,40 +11,40 @@ ostream& operator<<(ostream& os, complex c)
 {
     os << c.re << "+" << c.im << "i";
     return os;
-};
+}
 istream& operator>>(istream& is, complex& c)
 {
     is >> c.re >> c.im;
     return is;
-};
+}
 complex complex::operator*(complex c)
 {
     complex t;
     t.re = re * c.re - im * c.im;
     t.im = re * c.im + im * c.re;
     return t;
-};
+}
 complex complex::operator+(complex c)
 {
     complex t;
     t.re = re + c.re;
     t.im = im + c.im;
     return t;
-};
+}
 complex complex::operator-(complex c)
 {
     complex t;
     t.re = re - c.re;
     t.im = im - c.im;
     return t;
-};
+}
 complex complex::operator/(int c)
 {
     complex t;
     t.re = re / c;
     t.im = im / c;
     return t;
-};
+}
 /*complex complex:: operator-(complex)
 {
     complex t;
@@ -61,7 +61,7 @@ bool complex::operator<(complex c)
     m2 = sqrt(c.re * c.re + c.im * c.im);
     if (m1 < m2) res = true;
     return res;
-};
+}
 bool complex::operator>(complex c)
 {
     bool res = false;
@@ -71,7 +71,7 @@ bool complex::operator>(complex c)
     m2 = sqrt(c.re * c.re + c.im * c.im);
     if (m1 > m2) res = true;
     return res;
-};
+}
 
 complex complex::sqrt_c()
 {
@@ -84,4 +84,4 @@ complex complex::sqrt_c()
     }
 
     return t;
-};
+}
