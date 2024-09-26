@@ -79,7 +79,7 @@ number Array::calculate_square()
     {
         sum_dif = sum_dif + (avg-arr[i])*(avg-arr[i]);
     }
-    number average_square = (sum_dif/(size-1)).sqrt_c();
+    number average_square = sqrt((sum_dif/(size-1)));
     return average_square;
 }
 

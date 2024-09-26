@@ -20,11 +20,10 @@ public:
    // complex operator-(complex);
     bool operator<(complex);
     bool operator>(complex);
-
+    friend complex sqrt (complex);
     friend ostream& operator<<(ostream&, complex);
     friend istream& operator>>(istream&, complex&);
 
-    complex sqrt_c();
 };
 
 #endif // COMPLEX_H

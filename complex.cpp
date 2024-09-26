@@ -73,13 +73,14 @@ bool complex::operator>(complex c)
     return res;
 }
 
-complex complex::sqrt_c()
+complex sqrt(complex c)
 {
     complex t;
-    t.re = sqrt((sqrt(re*re + im*im) + re) / 2);
-    t.im = sqrt((sqrt(re*re + im*im) - re) / 2);
+    t.re = sqrt((sqrt(c.re*c.re + c.im*c.im) + c.re) / 2);
+    t.im = sqrt((sqrt(c.re*c.re + c.im*c.im) - c.re) / 2);
 
-    if(im < 0){
+    if(c.im < 0)
+    {
         t.im = t.im * -1;
     }
 
