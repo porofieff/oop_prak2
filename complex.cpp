@@ -2,21 +2,30 @@
 #include <cmath>
 
 complex::complex() {}
+
+float arg(double re, double im)
+{
+    return atan(im/re);
+}
+
 complex::complex(double r, double i)
 {
     re = r;
     im = i;
 }
+
 ostream& operator<<(ostream& os, complex c)
 {
     os << c.re << "+" << c.im << "i";
     return os;
 }
+
 istream& operator>>(istream& is, complex& c)
 {
     is >> c.re >> c.im;
     return is;
 }
+
 complex complex::operator*(complex c)
 {
     complex t;
@@ -24,6 +33,7 @@ complex complex::operator*(complex c)
     t.im = re * c.im + im * c.re;
     return t;
 }
+
 complex complex::operator+(complex c)
 {
     complex t;
@@ -31,6 +41,7 @@ complex complex::operator+(complex c)
     t.im = im + c.im;
     return t;
 }
+
 complex complex::operator-(complex c)
 {
     complex t;
@@ -38,6 +49,7 @@ complex complex::operator-(complex c)
     t.im = im - c.im;
     return t;
 }
+
 complex complex::operator/(int c)
 {
     complex t;
@@ -59,9 +71,20 @@ bool complex::operator<(complex c)
     int m2;
     m1 = sqrt(re * re + im * im);
     m2 = sqrt(c.re * c.re + c.im * c.im);
-    if (m1 < m2) res = true;
+    if (m1 < m2)
+    {
+        res = true;
+    }
+    else if (m1 == m2)
+    {
+        if (arg(re, im) < arg(re, im))
+        {
+            res = true;
+        }
+    }
     return res;
 }
+
 bool complex::operator>(complex c)
 {
     bool res = false;
@@ -69,7 +92,17 @@ bool complex::operator>(complex c)
     int m2;
     m1 = sqrt(re * re + im * im);
     m2 = sqrt(c.re * c.re + c.im * c.im);
-    if (m1 > m2) res = true;
+    if (m1 > m2)
+    {
+        res = true;
+    }
+    else if (m1 == m2)
+    {
+        if (arg(re, im) > arg(re, im))
+            {
+                res = true;
+            }
+    }
     return res;
 }
 
