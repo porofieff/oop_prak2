@@ -3,7 +3,7 @@
 
 complex::complex() {}
 
-float arg(double re, double im)
+double arg(double re, double im)
 {
     return atan(im/re);
 }
@@ -77,7 +77,7 @@ bool complex::operator<(complex c)
     }
     else if (m1 == m2)
     {
-        if (arg(re, im) < arg(re, im))
+        if (arg(re, im) < arg(c.re, c.im))
         {
             res = true;
         }
@@ -98,7 +98,7 @@ bool complex::operator>(complex c)
     }
     else if (m1 == m2)
     {
-        if (arg(re, im) > arg(re, im))
+        if (arg(re, im) > arg(c.re, c.im))
             {
                 res = true;
             }
